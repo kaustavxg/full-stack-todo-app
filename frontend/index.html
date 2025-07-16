@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="todo-style.css">
+</head>
+
+<body>
+    <div class="todo-container">
+        <h1>Enter your Todo's</h1>
+
+        <div class="input-section">
+            <input id="todo-input" type="text" placeholder="Enter your todo..." autocomplete="off">
+            <button id="add-button" onclick="addTodo()">Add Todo</button>
+        </div>
+
+        <div id="todo-list">
+            <div class="empty-state">No todos yet. Add one above!</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Made with ❤️ by<a href="https://github.com/kaustavxg" class="developer-link" target="_blank">Kaustav Gupta</a>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+<script src="todo-frontend.js"></script>
+</html>
