@@ -1,8 +1,10 @@
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT ||  9000;
+const port = 9000;
 
 app.use(cors());
 app.use(express.json());
@@ -20,17 +22,6 @@ function validateInput(req, res, next){
         })
         return;
     }
-
-    // check for duplicate id
-    const duplicate = todos.find(u => u.id === id)
-    if(duplicate){
-        res.status(409).json({
-            error: "ID already exist!"
-        })
-        return;
-    }
-
-    next();
 
 }
 
@@ -62,4 +53,6 @@ app.get('/', function(req, res){
     res.json(todos)
 })
 
-app.listen(port);
+app.listen(process.env.PORT, () => {
+    console.log(`Running on port: ${port}`);
+});
